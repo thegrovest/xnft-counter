@@ -1,6 +1,7 @@
 import React from 'react';
 import DateTimeDisplay from './DateTimeDisplay';
 import { useCountdown } from '../hooks/useCountdown';
+import './CountdownTimer.css';
 
 const ExpiredNotice = () => {
   return (
@@ -32,21 +33,24 @@ const ShowCounter = ({ days, hours, minutes, seconds }) => {
   );
 };
 
-const CountdownTimer = ({ targetDate }) => {
-  const [days, hours, minutes, seconds] = useCountdown(targetDate);
 
-  if (days + hours + minutes + seconds <= 0) {
-    return <ExpiredNotice />;
-  } else {
-    return (
-      <ShowCounter
-        days={days}
-        hours={hours}
-        minutes={minutes}
-        seconds={seconds}
-      />
-    );
-  }
+const CountdownTimer = ({ targetDate }) => {
+  const [days, hours, minutes, seconds] = useCountdown("2023-08-17T12:00:00-07:00");
+
+  return (
+     <div className="countdown-timer-background">
+        {days + hours + minutes + seconds <= 0 ? (
+           <ExpiredNotice />
+        ) : (
+           <ShowCounter
+              days={days}
+              hours={hours}
+              minutes={minutes}
+              seconds={seconds}
+           />
+        )}
+     </div>
+  );
 };
 
 export default CountdownTimer;

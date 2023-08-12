@@ -1,0 +1,22 @@
+.countdown-timer-background {
+    background-image: url('https://prod-image-cdn.tensor.trade/images/slug=bd366797-5599-417a-be03-1e43a7e3fb90/400x400/freeze=false/https://madlads.s3.us-west-2.amazonaws.com/images/8420.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 50px; 
+}
+
+.show-counter {
+    background-color: rgba(0, 0, 0, 0.7);  
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.show-counter span, .show-counter div {
+    color: red;
+}
