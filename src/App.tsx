@@ -5,8 +5,9 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useFonts, Inter_900Black } from "@expo-google-fonts/dev";
+import ReactGA from "react-ga4";
 
-import './App.css';
+import "./App.css";
 
 import { ExamplesScreens } from "./screens/ExamplesScreen";
 import { HomeScreen } from "./screens/HomeScreen";
@@ -15,6 +16,15 @@ import { TokenListNavigator } from "./screens/TokenNavigator";
 const Tab = createBottomTabNavigator();
 
 function TabNavigator() {
+  ReactGA.initialize([
+    {
+      trackingId: "G-6E8E9C7HEW",
+      gaOptions: {
+        userId: window.xnft.solana.publicKey.toBase58(),
+      },
+      gtagOptions: {},
+    },
+  ]);
   return (
     <Tab.Navigator
       initialRouteName="Home"
