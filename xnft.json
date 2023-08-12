@@ -1,14 +1,14 @@
 {
-  "name": "Counter",
+  "name": "Kingz Councile",
   "version": "0.0.1",
-  "storage": "",
+  "storage": "arweave",
   "description": "Counting days to the announcement",
-  "website": "http://counter.gg",
+  "website": "https://www.thegrovest.xyz/",
   "kind": "app",
   "icon": {
-    "md": "./assets/icon.png"
+    "md": "./assets/icon.jpg"
   },
-  "contact": "",
+  "contact": "grovest.nft@gmail.com",
   "screenshots": [
     "./assets/screenShot.png"
   ],
