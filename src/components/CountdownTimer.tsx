@@ -35,7 +35,7 @@ const ShowCounter = ({ days, hours, minutes, seconds }) => {
 
 
 const CountdownTimer = ({ targetDate }) => {
-  const [days, hours, minutes, seconds] = useCountdown("2023-08-17T12:00:00-07:00");
+  const [days, hours, minutes, seconds] = useCountdown("2023-08-30yaraT12:00:00-07:00");
 
   return (
      <div className="countdown-timer-background">
