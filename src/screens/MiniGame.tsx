@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TextInput, Button, Alert, ImageBackground, TouchableOpacity } from 'react-native';
 
-const MiniGame: React.FC = () => {
+export function MiniGame() {
   const [selectedNumber, setSelectedNumber] = useState<number>(generateRandomNumber(1, 100));
   const [userGuess, setUserGuess] = useState<string>('');
   const [feedback, setFeedback] = useState<string>('');
@@ -100,5 +100,3 @@ const styles = StyleSheet.create({
     fontSize: 16,
   }
 });
-
-export default MiniGame;

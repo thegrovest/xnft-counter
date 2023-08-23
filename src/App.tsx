@@ -11,7 +11,7 @@ import './App.css';
 import { HomeScreen } from "./screens/HomeScreen";
 import { TokenListNavigator } from "./screens/TokenNavigator";
 import { Game } from "./screens/Game";
-import MiniGame from "./screens/MiniGame";
+import {MiniGame} from "./screens/MiniGame";
 
 const Tab = createBottomTabNavigator();
 
@@ -23,7 +23,7 @@ function TabNavigator() {
         tabBarActiveTintColor: "#e91e63",
       }}
     >
-      {/* <Tab.Screen
+      <Tab.Screen
         name="Home"
         component={HomeScreen}
         options={{
@@ -32,8 +32,8 @@ function TabNavigator() {
             <MaterialCommunityIcons name="account" color={color} size={size} />
           ),
         }}
-      /> */}
-      {/* <Tab.Screen
+      />
+      <Tab.Screen
         name="Game"
         component={MiniGame}
         options={{
@@ -42,8 +42,8 @@ function TabNavigator() {
             <MaterialCommunityIcons name="bank" color={color} size={size} />
           ),
         }}
-      /> */}
-      {/* <Tab.Screen
+      />
+      <Tab.Screen
         name="Subscribe"
         component={Game}
         options={{
@@ -52,7 +52,7 @@ function TabNavigator() {
             <MaterialCommunityIcons name="home" color={color} size={size} />
           ),
         }}
-      /> */}
+      />
     </Tab.Navigator>
   );
 }
