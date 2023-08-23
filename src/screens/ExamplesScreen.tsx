@@ -1,57 +1,53 @@
-import * as Linking from "expo-linking";
-import { Button, Image, Text } from "react-native";
-import { atom, useRecoilState } from "recoil";
+// App.tsx
+import React, { useState, useEffect } from 'react';
+import { StyleSheet, View, Text, TouchableOpacity, Dimensions } from 'react-native';
 
-import { Screen } from "../components/Screen";
-import { Section } from "../components/Section";
-import { SignMessageButton } from "../components/SignMessageButton";
+const { width, height } = Dimensions.get('window');
 
-const testAtom = atom<"native" | "bright">({
-  key: "testAtom",
-  default: "native",
-});
+const BOX_SIZE = 50;
 
-function LearnMoreLink({ url }: { url: string }) {
-  return <Text onPress={() => Linking.openURL(url)}>Learn more</Text>;
-}
+const ExamplesScreen = () => {
+  const [score, setScore] = useState(0);
+  const [boxPosition, setBoxPosition] = useState({ x: 0, y: 0 });
 
-export function ExamplesScreens() {
-  const [future, setFuture] = useRecoilState(testAtom);
+  useEffect(() => {
+    moveBox();
+  }, []);
+
+  const moveBox = () => {
+    const x = Math.random() * (width - BOX_SIZE);
+    const y = Math.random() * (height - BOX_SIZE);
+    setBoxPosition({ x, y });
+    setTimeout(moveBox, 1000);
+  };
+
+  const handleTap = () => {
+    setScore(score + 1);
+  };
 
   return (
-    <Screen>
-      <Section title="Recoil">
-        <Button
-          title={`The Future is ${future}`}
-          color={
-            future === "bright" ? "rgb(228, 208, 10)" : "rgb(33, 150, 243)"
-          }
-          onPress={() => setFuture(future === "bright" ? "native" : "bright")}
-        />
-      </Section>
-      <Section title="Local Image Import">
-        <Image
-          source={require("../../assets/icon.png")}
-          style={{ width: 50, height: 50 }}
-        />
-        <LearnMoreLink url="https://reactnative.dev/docs/images#static-image-resources" />
-      </Section>
-      <Section title="Custom Font">
-        <Text style={{ fontFamily: "Inter_900Black" }}>
-          Inter 900 Black Font
-        </Text>
-        <LearnMoreLink url="https://docs.expo.dev/guides/using-custom-fonts/#using-a-google-font" />
-      </Section>
-      <Section title="Opening a URL">
-        <Button
-          onPress={() => Linking.openURL("https://xnft.gg")}
-          title="Open xNFT.gg"
-        />
-        <LearnMoreLink url="https://docs.expo.dev/versions/latest/sdk/linking/#linkingopenurlurl" />
-      </Section>
-      <Section title="Signing a message">
-        <SignMessageButton />
-      </Section>
-    </Screen>
+    <View style={styles.container}>
+      <Text style={styles.score}>Score: {score}</Text>
+      <TouchableOpacity style={[styles.box, { top: boxPosition.y, left: boxPosition.x }]} onPress={handleTap} />
+    </View>
   );
-}
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#f5f5f5',
+  },
+  score: {
+    fontSize: 24,
+    margin: 20,
+  },
+  box: {
+    position: 'absolute',
+    width: BOX_SIZE,
+    height: BOX_SIZE,
+    backgroundColor: 'tomato',
+  },
+});
+
+export default ExamplesScreen;

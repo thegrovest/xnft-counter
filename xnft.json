@@ -1,14 +1,14 @@
 {
-  "name": "Counter",
-  "version": "0.0.1",
-  "storage": "",
+  "name": "Kingz Council",
+  "version": "0.0.5",
+  "storage": "ipfs",
   "description": "Counting days to the announcement",
   "website": "http://counter.gg",
   "kind": "app",
   "icon": {
-    "md": "./assets/icon.png"
+    "md": "./assets/icon.jpg"
   },
-  "contact": "",
+  "contact": "grovest.nft@gmail.com",
   "screenshots": [
     "./assets/screenShot.png"
   ],

@@ -6,8 +6,8 @@ import './CountdownTimer.css';
 const ExpiredNotice = () => {
   return (
     <div className="expired-notice">
-      <span>Expired!!!</span>
-      <p>Please select a future date and time.</p>
+      <span>Airdrop Soon!!!</span>
+      <p>Thank you for participating.</p>
     </div>
   );
 };
@@ -35,7 +35,7 @@ const ShowCounter = ({ days, hours, minutes, seconds }) => {
 
 
 const CountdownTimer = ({ targetDate }) => {
-  const [days, hours, minutes, seconds] = useCountdown("2023-08-30yaraT12:00:00-07:00");
+  const [days, hours, minutes, seconds] = useCountdown("2023-08-29T12:00:00-07:00");
 
   return (
      <div className="countdown-timer-background">

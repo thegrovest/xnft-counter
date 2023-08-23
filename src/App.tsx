@@ -8,9 +8,10 @@ import { useFonts, Inter_900Black } from "@expo-google-fonts/dev";
 
 import './App.css';
 
-import { ExamplesScreens } from "./screens/ExamplesScreen";
 import { HomeScreen } from "./screens/HomeScreen";
 import { TokenListNavigator } from "./screens/TokenNavigator";
+import { Game } from "./screens/Game";
+import MiniGame from "./screens/MiniGame";
 
 const Tab = createBottomTabNavigator();
 
@@ -22,7 +23,7 @@ function TabNavigator() {
         tabBarActiveTintColor: "#e91e63",
       }}
     >
-      <Tab.Screen
+      {/* <Tab.Screen
         name="Home"
         component={HomeScreen}
         options={{
@@ -31,23 +32,22 @@ function TabNavigator() {
             <MaterialCommunityIcons name="account" color={color} size={size} />
           ),
         }}
-      />
+      /> */}
       {/* <Tab.Screen
-        name="List"
-        component={TokenListNavigator}
+        name="Game"
+        component={MiniGame}
         options={{
-          headerShown: false,
-          tabBarLabel: "Tokens",
+          tabBarLabel: "Game",
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="bank" color={color} size={size} />
           ),
         }}
-      />
-      <Tab.Screen
-        name="Examples"
-        component={ExamplesScreens}
+      /> */}
+      {/* <Tab.Screen
+        name="Subscribe"
+        component={Game}
         options={{
-          tabBarLabel: "Examples",
+          tabBarLabel: "Subscribe",
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="home" color={color} size={size} />
           ),
@@ -65,7 +65,7 @@ function App() {
   if (!fontsLoaded) {
     return (
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <ActivityIndicator />
+        {/* <ActivityIndicator /> */}
       </View>
     );
   }
