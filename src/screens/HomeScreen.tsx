@@ -4,7 +4,7 @@ import tw from "twrnc";
 import { Screen } from "../components/Screen";
 import CountdownTimer from '../components/CountdownTimer';
 
-export function HomeScreen() {
+export const HomeScreen=() =>{
   const features = [
     "tailwind",
     "recoil",
