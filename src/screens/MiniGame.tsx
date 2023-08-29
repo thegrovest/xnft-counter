@@ -30,11 +30,11 @@ export const MiniGame = () => {
 
   return (
     <ImageBackground 
-      source={{ uri: 'https://prod-image-cdn.tensor.trade/images/slug=bd366797-5599-417a-be03-1e43a7e3fb90/400x400/freeze=false/https://madlads.s3.us-west-2.amazonaws.com/images/8420.png' }}
+      source={{ uri: 'https://bafybeihxhhzrxiv6xs2vlikwn7qwwl2clmrrkln4qtg5jc6mnfqy3upkqe.ipfs.nftstorage.link/' }}
       style={styles.background}
     >
       <View style={styles.container}>
-        <Text style={styles.title}>Guess the Number!</Text>
+        <Text style={styles.title}>Guess a number from 1-100</Text>
         <TextInput 
           style={styles.input} 
           value={userGuess}
@@ -100,3 +100,5 @@ const styles = StyleSheet.create({
     fontSize: 16,
   }
 });
+
+export default MiniGame;

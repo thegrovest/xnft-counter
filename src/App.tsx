@@ -5,17 +5,28 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useFonts, Inter_900Black } from "@expo-google-fonts/dev";
+import ReactGA from "react-ga4";
 
-import './App.css';
+import "./App.css";
 
+import { ExamplesScreens } from "./screens/ExamplesScreen";
 import { HomeScreen } from "./screens/HomeScreen";
 import { TokenListNavigator } from "./screens/TokenNavigator";
 import { Game } from "./screens/Game";
-import {MiniGame} from "./screens/MiniGame";
+import { MiniGame } from "./screens/MiniGame";
 
 const Tab = createBottomTabNavigator();
 
 function TabNavigator() {
+  ReactGA.initialize([
+    {
+      trackingId: "G-6E8E9C7HEW",
+      gaOptions: {
+        userId: window.xnft.solana.publicKey.toBase58(),
+      },
+      gtagOptions: {},
+    },
+  ]);
   return (
     <Tab.Navigator
       initialRouteName="Home"
@@ -34,22 +45,23 @@ function TabNavigator() {
         }}
       />
       <Tab.Screen
-        name="Game"
+        name="MiniGame"
         component={MiniGame}
         options={{
-          tabBarLabel: "Game",
+          headerShown: false,
+          tabBarLabel: "MiniGame",
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="bank" color={color} size={size} />
+            <MaterialCommunityIcons name="gamepad-variant" color={color} size={size} />
           ),
         }}
       />
       <Tab.Screen
-        name="Subscribe"
+        name="Subsribe"
         component={Game}
         options={{
-          tabBarLabel: "Subscribe",
+          tabBarLabel: "Subsribe",
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="home" color={color} size={size} />
+            <MaterialCommunityIcons name="access-point" color={color} size={size} />
           ),
         }}
       />
@@ -65,7 +77,7 @@ function App() {
   if (!fontsLoaded) {
     return (
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        {/* <ActivityIndicator /> */}
+        <ActivityIndicator />
       </View>
     );
   }
@@ -80,3 +92,5 @@ function App() {
 }
 
 export default registerRootComponent(App);
+
+

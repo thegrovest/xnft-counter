@@ -1,9 +1,9 @@
 {
   "name": "Kingz Council",
-  "version": "0.0.5",
+  "version": "0.0.4",
   "storage": "ipfs",
   "description": "Counting days to the announcement",
-  "website": "http://counter.gg",
+  "website": "https://www.thegrovest.xyz/",
   "kind": "app",
   "icon": {
     "md": "./assets/icon.jpg"

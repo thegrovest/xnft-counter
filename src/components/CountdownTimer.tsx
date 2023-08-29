@@ -6,7 +6,7 @@ import './CountdownTimer.css';
 const ExpiredNotice = () => {
   return (
     <div className="expired-notice">
-      <span>Airdrop Soon!!!</span>
+        <span>Airdrop Soon!!!</span>
       <p>Thank you for participating.</p>
     </div>
   );
